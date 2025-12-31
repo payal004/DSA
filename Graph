@@ -111,4 +111,38 @@ Output
 01423
 
 //DFS
+#include<bits/stdc++.h>
+using namespace std;
+void dfs(vector<int> adj],vector<int> &visited , vector<int> &result , int root)
+{
+ visited[root]=1;
+ result.push_back(root);
+ for(int i:adj[root])
+ {
+  if(!visited[i]){
+   dfs(adj,visited,result,i);
+  }
+ }
+}
+int main()
+{
+ int n
+ cout << " Enter no of nodes "<<endl;
+ cin >> n ;
+ int m ;
+ vector<int> adj[n];
+ adj[1]={2,3};
+ adj[2]={1,4,5};
+ adj[3]={1};
+ adj[4]={2,5};
+ adj[5]={4,5};
+ vector<int> visited(n,0);
+ vector<int> result;
+ dfs(adj,visited,result,0);
+ for(int i:result)
+ {cout<<i<<" ";
+  cout<<endl;
+ }
+ return 0 ;
+}
 
