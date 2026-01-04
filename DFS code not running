@@ -1,0 +1,59 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void bfs(int n,vector<int> adjL[])
+{
+    queue<int> q;
+    int visitedArray[n];
+    q.push(1);
+    visitedArray[1]=1;
+    while(!q.empty())
+    {
+        cout<<q.front();
+        int node = q.front();
+        q.pop();
+        for(int it:adjL[node]){
+            if(visitedArray[it]!=1){
+                q.push(it);
+                visitedArray[it]=1;
+            }
+        }
+    }
+}
+int main() {
+    int n , m ;
+    cout<<"Enter no of nodes"<<endl;
+    cin>> n;
+    cout<<n<<endl;
+    cout<<"Enter no of edges"<<endl;
+    cin >> m;
+    cout<<m<<endl;
+    // adj list 
+    vector<int> adjL[n];
+    for(int i=1;i<=m;i++)
+    {
+        int u,v;
+        cin >> u >> v;
+        adjL[u].push_back(v);
+    }
+    cout<<"below are edges between nodes"<<endl;
+    for(int i=1;i<=n;i++)
+    {
+        cout<<i<<"->";
+        for(int j:adjL[i])
+        {
+            cout<<j;
+        }
+        cout<<endl;
+    }
+    bfs(n,adjL);
+    return 0;
+}
+
+input
+5
+4
+1 2 
+1 3 
+1 4 
+2 5 
