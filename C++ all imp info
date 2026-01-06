@@ -1,0 +1,46 @@
+call by value & call by reference
+
+#include <iostream>
+using namespace std;
+void fcall(int x){
+    x=10000;
+}
+void fref(int &x){
+    x=20000;
+}
+int main() {
+    // cout<<"Hello World!";
+    int n = 10;
+    fcall(n); // copy
+    cout<<n<<endl;
+    fref(n);  //orignial ko change
+    cout<<n;
+    return 0;
+}
+
+Output
+10
+20000
+
+Function Declarations vs. Definitions
+C++ reads from top to bottom. If you call a function before you define it, the compiler will panic. You have two choices:
+
+Define it above main(): Put the whole function at the top.
+
+Declare it (Prototype): Tell the compiler "This function exists, I'll define it later."
+// Declaration (Prototype)
+void sayHello(); 
+
+int main() {
+    sayHello(); // Call
+    return 0;
+}
+
+// Definition
+void sayHello() {
+    cout << "Hello!";
+}
+--------------------------
+SCOPE in C++
+definition - whole function - var is actual variable 
+declaration  - only prototype - var is just a placeholder
