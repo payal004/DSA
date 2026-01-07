@@ -44,3 +44,40 @@ void sayHello() {
 SCOPE in C++
 definition - whole function - var is actual variable 
 declaration  - only prototype - var is just a placeholder
+
+-----------------------------
+POINTERS
+
+&  address of 
+* 2 usages ar Pointer Declaration , De-reference
+
+int a = 10;
+cout<<a;
+cout<<&a;
+
+int a=10;
+int *ptr=&a;       // declaration
+cout<<ptr;
+cout<<*ptr;       // de-reference
+
+Pass by pointer - exact same as pass by reference , only thing is NULLPTR can be pass
+passByPointer(int *ptr)
+{
+if(ptr!=NULLPTR)
+{
+ *ptr = 100;
+}
+int main()
+{
+ int num = 5;
+ passByPointer(num);
+ cout<<num;
+}
+-------------------------
+
+DYNAMIC MEMORY 
+new keyword  - allow to rent new memory block on FLY using new keyword
+
+GARBAGE POINTER 
+pointer - no address on it 
+program crash (bcz of random / FAKE address) (SEGMENTATION FAULT)
