@@ -1,3 +1,7 @@
+What is #define V 6?
+This is a macro definition. 
+It tells the compiler to replace every occurrence of the letter V with the number 6 throughout your code before it starts compiling.
+-------------------------------------
 call by value & call by reference
 
 #include <iostream>
