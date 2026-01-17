@@ -85,3 +85,15 @@ new keyword  - allow to rent new memory block on FLY using new keyword
 GARBAGE POINTER 
 pointer - no address on it 
 program crash (bcz of random / FAKE address) (SEGMENTATION FAULT)
+-------------------------------------------
+what is iostream in C++
+In C++, iostream is a core header file that stands for Input/Output Stream.
+It is part of the C++ Standard Library and provides the basic functionality required to read data from an input (like a keyboard) and write data to an output (like a screen).
+------------------------------
+what is bits/stdc++.h>
+#include <bits/stdc++.h> is a "catch-all" header file primarily used in competitive programming. 
+It is not a standard C++ header; instead, it is a header provided by the GNU GCC compiler that includes nearly every standard library header in one line.
+------------------------------------------
+using namespace std means?
+In C++, using namespace std; is a directive that tells the compiler to look into the Standard (std) Namespace for any names 
+(functions, objects, or classes) it doesn't recognize.
