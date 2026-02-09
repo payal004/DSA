@@ -16,3 +16,33 @@ int fn(vector<int> &wt,vector<int> &val,int W,int n)
         return fn(wt,val,W,n);
     }
 };
+
+
+----------
+class Solution {
+  public: 
+  int dp[1001][1001];
+int fn(vector<int> &wt,vector<int> &val,int W,int n)
+{
+    if(n==0 || W==0){
+       return 0;
+    }
+    if(dp[n][W]!=-1)
+    {
+        return dp[n][W];
+    }
+    if(wt[n-1]<=W)
+    {
+        dp[n][W]=max(val[n-1]+fn(wt,val,W-wt[n-1],n-1),fn(wt,val,W,n-1));
+    }
+    else if(wt[n-1]>W){
+         dp[n][W]=fn(wt,val,W,n-1);
+    }
+    return dp[n][W];
+}
+    int knapsack(int W, vector<int> &val, vector<int> &wt) {
+        int n = wt.size();
+        memset(dp,-1,sizeof(dp));
+        return fn(wt,val,W,n);
+    }
+};
