@@ -1,0 +1,26 @@
+class Solution {
+  public:
+  int dp[1001][1001];
+    bool fn(vector<int>&arr,int sum , int n)
+    {
+        if(sum==0) return true;      //empty subsets / blank subset
+        if(n==0) return false;       // sum is positive value , but arr is empty 
+        if(dp[n][sum]!=-1)
+        {
+            return dp[n][sum];
+        }
+        if(arr[n-1]<=sum)
+        {
+            return dp[n-1][sum]=fn(arr,sum-arr[n-1],n-1) || fn(arr,sum,n-1);
+        }
+        else
+        {
+            return dp[n-1][sum]=fn(arr,sum,n-1);
+        }
+    }
+    bool isSubsetSum(vector<int>& arr, int sum) {
+        int n = arr.size();
+        memset(dp,-1,sizeof(dp));
+        return fn(arr,sum,n);
+    }
+};
