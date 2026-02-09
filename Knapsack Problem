@@ -1,1 +1,18 @@
-
+class Solution {
+  public: 
+int fn(vector<int> &wt,vector<int> &val,int W,int n)
+{
+    if(n==0 || W==0) return 0;
+    if(wt[n-1]<=W)
+    {
+        return max(val[n-1]+fn(wt,val,W-wt[n-1],n-1),fn(wt,val,W,n-1));
+    }
+    else{
+        return fn(wt,val,W,n-1);
+    }
+}
+    int knapsack(int W, vector<int> &val, vector<int> &wt) {
+        int n = wt.size();
+        return fn(wt,val,W,n);
+    }
+};
